@@ -92,6 +92,7 @@ python3 evaluate.py --dataset test --count 300 --vector 10 --resize 8 --ratio 0.
 ![evaluation](./imgs/evaluation.png)
 
 
+
 ## 지표 계산 결과
 ### 공개 데이터 셋
 | Dataset | Resize |SW(min, max) | SW(max) | LDA(max) |
@@ -101,4 +102,12 @@ python3 evaluate.py --dataset test --count 300 --vector 10 --resize 8 --ratio 0.
 | CIFAR100 | Original |( 0.350826, 6.480159 ) | 0.014300 | 0.004271 |
 | CALTECH256 | 1 / 8 |( 0.315621, 7.118770 ) | 0.003722 | 0.000893 |
 | MS-COCO | 1 / 8 |( 0.434393, 4.247490 ) | 0.010483 | 0.005044 |
+
+### Boxplot
+- SW
+![SW](./imgs/SW.png)
+- SB
+![SB](./imgs/SB.png)
+- LDA
+![LDA](./imgs/LDA.png)
 
