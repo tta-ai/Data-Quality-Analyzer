@@ -107,7 +107,9 @@ python3 evaluate.py --dataset test --count 300 --vector 10 --resize 8 --ratio 0.
 - SW
 ![SW](./imgs/SW.png)
 - SB
+  - 
 ![SB](./imgs/SB.png)
 - LDA
+  - FMNIST의 선형 분류성(LDA)이 다른 공개 데이터셋에 비해 높아 비교적 Classification 하기 쉽다.
 ![LDA](./imgs/LDA.png)
 
