@@ -82,6 +82,16 @@ Project
 ```
 - 출력 로그 파일 이름은 caltech로 하며 4개의 프로세스, 샘플링 횟수 500번, 데이터 로딩은 5개의 프로세스 사용 ,가우시안 랜덤 벡터 20개, 리사이즈는 8분의 1로 하였다고 로그파일에 명시, 샘플링 비율 50%, 최소 샘플링은 40개를 사용하여 지표계산을 한다. 총 ( 프로세스(4) x 샘플링 횟수(500) x 가우시안 랜덤벡터(20) )개의 지표 값들이 나오므로 80000개의 결과가 로그로 남는다.
 
+## Evaluation
+- Argumnets 설명은 'How to Run' 파트에 있음
+- 지표계산 할 때 사용하였던 인자 값들을 넣어준다
+```
+python3 evaluate.py --dataset test --count 300 --vector 10 --resize 8 --ratio 0.1
+```
+실행결과
+![evaluation](./imgs/evaluation.png)
+
+
 ## 지표 계산 결과
 ### 공개 데이터 셋
 | Dataset | Resize |SW(min, max) | SW(max) | LDA(max) |
