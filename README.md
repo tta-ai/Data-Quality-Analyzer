@@ -85,6 +85,7 @@ Project
 ```
 
 학습 과정
+
 ![training](./imgs/training.png)
 
 ### API v1
