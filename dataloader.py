@@ -83,6 +83,22 @@ class StratifiedSampler(Sampler):
     
     
 def get_loader(img_folder_path, img_meta_path, sample_ratio, sampling_count ,min_sampling_num, num_workers):
+
+    """
+    img_folder_path : path of image folder
+    
+    img_meta_path : path of image csv file
+    
+    sample_ratio : sampling ratio
+    
+    sampling_count = sampling count
+    
+    min_sampleing_num = minimum sampling number
+    
+    num_workers = # of process for dataloader
+    
+    """
+
     df = pd.read_csv(img_meta_path)
     
     #이미지 path 및 label

@@ -21,6 +21,29 @@ class DatasetQualityEval():
     # numpy array를 input으로 받음.
     def __init__(self, loader, process= 1 ,resize = 1, sample_ratio = 0.3, sampling_count = 2, 
                  normal_vector = 10, batch_size = 100, dataset_name = 'NoName', size = (256, 256, 3)):
+
+         """
+        
+        loader : data iterator, i.e., pytorch DataLoader
+        
+        process : process id, default=1
+        
+        resize : for log file name, default=1
+        
+        sample_ratio : sampling ratio, default=0.3
+        
+        sampling_count : sampling count, default=2
+        
+        normal_vector : gaussian random normal vector, this is for random projection, default=10
+        
+        batch_size : loader batch size
+        
+        dataset_name : for log file name
+        
+        size : dataset shape
+        
+        """
+
         # data 
         self.loader = loader
         
