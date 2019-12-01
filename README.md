@@ -84,6 +84,62 @@ Project
 ./run.sh --img='./data/img_folder/ --meta=./data/data_label_info.csv --dataset=caltech --process=4 --count=500 --nworkers=5 --vector=20 --resize=8 --ratio=0.5 --msample=40
 ```
 
+학습 과정
+![training](./imgs/training.png)
+
+### API v1
+- 직접 함수로 불러와서 사용하는 방법
+  - 멀티 프로세스 x
+  
+  1. Dataloader 불러오기
+  ```python
+  import dataloader
+  
+  img_path = '../resize_test/CALTECH256_resized8_46_41/img_folder/'
+  meta_path = '../resize_test/CALTECH256_resized8_46_41/data_label_info.csv'
+  sample_ratio = 0.1
+  sampling_count = 500
+  min_sampling_num = 30
+  num_workers = 0
+  
+  loader = dataloader.get_loader(img_path, meta_path, sample_ratio, sampling_count, min_sampling_num, num_workers)
+  ```
+  
+  2. indicator 불러오기
+  ```python
+  import train
+
+  process = 1
+  resize = 8
+  sample_ratio = 0.1
+  sampling_count = 500
+  normal_vector = 10
+  dataset_name = 'test'
+
+  # load a sample
+  data, label = iter(test_loader).next()
+
+  # if RGB image
+  if len(data.shape) == 4:
+      size = (data.shape[3], data.shape[2], data.shape[1])
+
+  # Gray image 
+  else:
+      size = (data.shape[2], data.shape[1], 1)
+  del data, label
+
+  # loader from first step
+  dqa = train.DatasetQualityEval(loader, process, resize, sample_ratio, sampling_count, normal_vector, loader.batch_size, dataset_name, size)
+  ```
+  
+  3. 계산
+  ```python
+  # result, log files will be saved in current folder
+  mean_coherence = dqa.coherence(normal_vector)
+  ```
+  
+
+
 ## Evaluation
 - Argumnets 설명은 'How to Run' 파트에 있음
 - 지표계산 할 때 사용하였던 인자 값들을 넣어준다
