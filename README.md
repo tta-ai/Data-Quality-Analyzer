@@ -5,6 +5,7 @@ Fisher Linear Discriminant Analysis를 사용한 이미지 품질 지표 평가 
 - Python3.6
 - PIL
 - pytorch
+- torchvision
 - numpy
 - pandas
 - scikit-learn
