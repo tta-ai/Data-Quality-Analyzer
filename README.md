@@ -31,6 +31,12 @@ Project
 - img_folder 안에 있는 이미지들이 Stratified Sampling(층화추출법)을 통해 랜덤으로 선택되어 지표계산에 사용된다.
 
 ## How to Run
+### Install dependencies
+프로그램 구동을 위해 필요한 라이브러리 설치
+```python
+python -m pip install -r requirements.txt
+```
+
 ### Arguments
 - --img (-i)
   - 이미지 데이터 폴더 경로
