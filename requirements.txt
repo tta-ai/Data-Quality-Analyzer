@@ -1,5 +1,6 @@
 pillow
 torch
+torchvision
 numpy
 pandas
 scikit-learn

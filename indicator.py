@@ -1,6 +1,3 @@
-import multiprocessing
-import xml.etree.ElementTree as elemTree
-import glob
 import os
 from PIL import Image
 from torchvision import transforms
@@ -9,7 +6,6 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader, Sampler, TensorDataset
-import multiprocessing as mps
 from sklearn import preprocessing
 from sys import getsizeof
 import pickle

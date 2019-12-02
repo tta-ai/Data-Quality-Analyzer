@@ -1,5 +1,4 @@
 import pickle
-import smtplib
 
 def save_list(data, path):
     with open(path, "wb") as fp:   #Pickling
