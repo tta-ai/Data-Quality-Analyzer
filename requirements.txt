@@ -1,0 +1,7 @@
+pillow
+torch
+numpy
+pandas
+scikit-learn
+argparse
+opencv-python
