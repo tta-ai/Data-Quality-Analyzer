@@ -35,7 +35,7 @@ Project
 ### Install dependencies
 프로그램 구동을 위해 필요한 라이브러리 설치
 ```python
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Arguments
