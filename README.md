@@ -5,6 +5,7 @@ Fisher Linear Discriminant Analysis를 사용한 이미지 품질 지표 평가 
 - Python3.6
 - PIL
 - pytorch
+- torchvision
 - numpy
 - pandas
 - scikit-learn
@@ -34,7 +35,7 @@ Project
 ### Install dependencies
 프로그램 구동을 위해 필요한 라이브러리 설치
 ```python
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Arguments
@@ -78,16 +79,16 @@ python -m pip install -r requirements.txt
 - process 1, vector 10, count 500, ratio 0.1 일 때 각 지표의 평균 값이 대부분 수렴함
 
 ### Calculation
-- Short version
+- Short form
   - 출력 로그 파일 이름은 test로 하며 5개의 프로세스, 샘플링 횟수 300번, 데이터 로딩은 메인프로세스만 사용 ,가우시안 랜덤 벡터 10개, 리사이즈는 4분의 1로 하였다고 로그파일에 명시, 샘플링 비율 10%, 최소 샘플링은 30개를 사용하여 지표계산을 한다. 총 ( 프로세스(5) x 샘플링 횟수(300) x 가우시안 랜덤벡터(10) )개의 지표 값들이 나오므로 15000개의 결과가 로그로 남는다.
 ```
-./run.sh -i='./data/img_folder/ -m=./data/data_label_info.csv -d=test -p=5 -c=300 -n=0 -v=10 -re=4 -ra=0.1 -ms=30
+./run.sh -i=./data/img_folder/ -m=./data/data_label_info.csv -d=test -p=5 -c=300 -n=0 -v=10 -re=4 -ra=0.1 -ms=30
 ```
 
-- Long version
+- Long form
   - 출력 로그 파일 이름은 caltech로 하며 4개의 프로세스, 샘플링 횟수 500번, 데이터 로딩은 5개의 프로세스 사용 ,가우시안 랜덤 벡터 20개, 리사이즈는 8분의 1로 하였다고 로그파일에 명시, 샘플링 비율 50%, 최소 샘플링은 40개를 사용하여 지표계산을 한다. 총 ( 프로세스(4) x 샘플링 횟수(500) x 가우시안 랜덤벡터(20) )개의 지표 값들이 나오므로 40000개의 결과가 로그로 남는다.
 ```
-./run.sh --img='./data/img_folder/ --meta=./data/data_label_info.csv --dataset=caltech --process=4 --count=500 --nworkers=5 --vector=20 --resize=8 --ratio=0.5 --msample=40
+./run.sh --img=./data/img_folder/ --meta=./data/data_label_info.csv --dataset=caltech --process=4 --count=500 --nworkers=5 --vector=20 --resize=8 --ratio=0.5 --msample=40
 ```
 
 학습 과정
